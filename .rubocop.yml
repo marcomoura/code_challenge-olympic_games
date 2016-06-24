@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+
+Metrics/LineLength:
+  Max: 100
+
+Documentation:
+  Enabled: false
