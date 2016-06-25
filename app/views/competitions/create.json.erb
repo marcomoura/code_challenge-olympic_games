@@ -1,0 +1,8 @@
+{
+  "id": <%= @competition.id -%>,
+  "athletes": [
+    <%= render partial: 'athletes/athlete',
+               collection: @competition.athletes,
+               spacer_template: 'athletes/comma' -%>
+  ]
+}

@@ -2,8 +2,12 @@ AllCops:
   Exclude:
     - 'vendor/**/*'
     - 'db/*'
+    - 'Guardfile'
+    - 'lib/tasks/*'
     - 'tmp/**/*'
     - 'bin/**/*'
+    - 'script/**/*'
+    - 'features/support/env.rb'
 
 Metrics/LineLength:
   Max: 100

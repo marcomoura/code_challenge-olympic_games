@@ -22,6 +22,7 @@ module OlympicResults
 
     config.generators do |g|
       g.test_framework :rspec
+      g.integration_tool false
       g.stylesheets false
       g.javascripts false
       g.helper false

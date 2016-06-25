@@ -1,0 +1,6 @@
+{
+  "status": "<%= @status -%>",
+  "ranking": [<%= render partial: 'athletes/rank',
+               collection: @results,
+               spacer_template: 'athletes/comma' -%>]
+}

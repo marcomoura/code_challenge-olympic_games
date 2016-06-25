@@ -1,0 +1,2 @@
+class AthleteNotFoundError < StandardError
+end

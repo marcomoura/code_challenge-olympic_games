@@ -23,8 +23,11 @@ build:
   steps:
     - bundle-install
     - script:
-      name: Test suite
+      name: Unit Test suite
       code: bundle exec rspec
+    - script:
+      name: Integration Test suite
+      code: bundle exec cucumber
     - script:
       name: Static Code analyzer
       code: bundle exec rubocop
