@@ -1,6 +1,5 @@
 [![wercker status](https://app.wercker.com/status/8c1b601808a27c9c5071a425442dc918/s "wercker status")](https://app.wercker.com/project/bykey/8c1b601808a27c9c5071a425442dc918)
 
-# Teste prático da EstanteVirtual #
 ## Jogos Olímpicos ##
 
 Com a chegada dos jogos olímpicos, fomos designados para construir uma API
