@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Sport.create name: 'corrida', comparison_operator: :lesser
+Sport.create name: 'corrida', ranking_calculator_strategy: :lowest_score
 Sport.create name: 'dardo'

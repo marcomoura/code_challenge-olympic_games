@@ -2,7 +2,7 @@ class CompetitionsController < ApplicationController
   rescue_from ActionController::ParameterMissing, ActiveRecord::RecordInvalid do
     head 400
   end
-  rescue_from CompetitionService::FinishedError do
+  rescue_from FinishedError do
     head 403
   end
   rescue_from ActiveRecord::RecordNotFound do
@@ -14,25 +14,25 @@ class CompetitionsController < ApplicationController
 
   # POST /competitions
   def create
-    @competition = CompetitionService.create competition_params
+    @competition = CompetitionFacade.create competition_params
     render status: 201
   end
 
   # DELETE /competitions
   def destroy
-    CompetitionService.finish params[:id]
+    CompetitionFacade.finish params[:id]
     head 200
   end
 
   # GET /competitions/1
   def show
-    @status, @results = CompetitionService.ranking params[:id]
+    @status, @results = CompetitionFacade.ranking params[:id]
     render status: 200
   end
 
   # PUT /competitions
   def update
-    if CompetitionService.add_result params[:id], competition_params
+    if CompetitionFacade.add_result params[:id], competition_params
       head 204
     else
       head 400

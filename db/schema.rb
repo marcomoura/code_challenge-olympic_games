@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628154336) do
+ActiveRecord::Schema.define(version: 20160713012332) do
 
   create_table "athletes", force: :cascade do |t|
     t.string   "name",           limit: 50, null: false
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20160628154336) do
   add_index "results", ["athlete_code"], name: "index_results_on_athlete_code"
 
   create_table "sports", force: :cascade do |t|
-    t.string   "name",                limit: 50,             null: false
-    t.integer  "comparison_operator",            default: 0, null: false
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.string   "name",                        limit: 50,             null: false
+    t.integer  "ranking_calculator_strategy",            default: 0, null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   add_index "sports", ["name"], name: "index_sports_on_name"

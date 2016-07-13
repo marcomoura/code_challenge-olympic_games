@@ -2,7 +2,7 @@ describe CompetitionsController do
   describe 'GET #show' do
     context 'success' do
       before do
-        allow(CompetitionService).to receive(:ranking).and_return 1
+        allow(CompetitionFacade).to receive(:ranking).and_return 1
         get :show, id: 1, format: :json
       end
 
@@ -11,7 +11,7 @@ describe CompetitionsController do
 
     context 'error' do
       before do
-        allow(CompetitionService).to receive(:ranking).and_raise ActiveRecord::RecordNotFound
+        allow(CompetitionFacade).to receive(:ranking).and_raise ActiveRecord::RecordNotFound
         get :show, id: 1, format: :json
       end
 
@@ -22,7 +22,7 @@ describe CompetitionsController do
   describe 'POST #create' do
     context 'success' do
       before do
-        allow(CompetitionService).to receive(:create).and_return 'fake'
+        allow(CompetitionFacade).to receive(:create).and_return 'fake'
         post :create, competition: { sport: 1 }, format: :json
       end
 
@@ -32,7 +32,7 @@ describe CompetitionsController do
 
     context 'error' do
       before do
-        allow(CompetitionService)
+        allow(CompetitionFacade)
           .to receive(:create)
           .and_raise ActiveRecord::RecordInvalid.new(Competition.new)
         post :create, sport: 1, format: :json
@@ -45,7 +45,7 @@ describe CompetitionsController do
   describe 'DELETE #destroy' do
     context 'success' do
       before do
-        allow(CompetitionService).to receive(:finish).and_return true
+        allow(CompetitionFacade).to receive(:finish).and_return true
         delete :destroy, id: 1
       end
 
@@ -54,7 +54,7 @@ describe CompetitionsController do
 
     context 'error' do
       before do
-        allow(CompetitionService).to receive(:finish).and_raise ActiveRecord::RecordNotFound
+        allow(CompetitionFacade).to receive(:finish).and_raise ActiveRecord::RecordNotFound
         delete :destroy, id: 1
       end
 

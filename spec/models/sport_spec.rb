@@ -5,5 +5,7 @@ describe Sport do
     expect(described_class.new(name: 'judo'))
       .to validate_uniqueness_of(:name).allow_blank.case_insensitive
   end
-  it { is_expected.to define_enum_for(:comparison_operator).with %i(greater lesser) }
+  it do
+    is_expected.to define_enum_for(:ranking_calculator_strategy).with %i(highest_score lowest_score)
+  end
 end

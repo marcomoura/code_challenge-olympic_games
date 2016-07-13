@@ -1,5 +1,5 @@
-describe UpdateAttributesDecorator do
-  context '#decorate' do
+describe UpdateAttributesAdapter do
+  context '#adapt' do
     let(:id) { '1' }
     let(:input) do
       {
@@ -31,7 +31,7 @@ describe UpdateAttributesDecorator do
         .and_return(double(id: 1), double(id: 2))
     end
 
-    subject { described_class.decorate id, input }
+    subject { described_class.adapt id, input }
     it { is_expected.to eq output }
   end
 end

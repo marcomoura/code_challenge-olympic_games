@@ -1,6 +1,6 @@
-class UpdateAttributesDecorator
-  def self.decorate(id, attributes)
-    new(id, attributes).decorate
+class UpdateAttributesAdapter
+  def self.adapt(id, attributes)
+    new(id, attributes).params
   end
 
   def initialize(id, attributes)
@@ -8,7 +8,7 @@ class UpdateAttributesDecorator
     @attributes = attributes['results']
   end
 
-  def decorate
+  def params
     { athletes_attributes: attributes }
   end
 

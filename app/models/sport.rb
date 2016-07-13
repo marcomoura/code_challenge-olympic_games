@@ -2,17 +2,17 @@
 #
 # Table name: sports
 #
-#  id                  :integer          not null, primary key
-#  name                :string(50)       not null
-#  comparison_operator :integer          default(0), not null
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
+#  id                          :integer          not null, primary key
+#  name                        :string(50)       not null
+#  ranking_calculator_strategy :integer          default(0), not null
+#  created_at                  :datetime         not null
+#  updated_at                  :datetime         not null
 #
 
 class Sport < ActiveRecord::Base
   has_many :competitions
 
-  enum comparison_operator: %i(greater lesser)
+  enum ranking_calculator_strategy: %i(highest_score lowest_score)
 
   validates :name,
             presence: true,

@@ -1,4 +1,4 @@
-describe CompetitionService do
+describe CompetitionFacade do
   context '#create' do
     let(:attributes) do
       {
@@ -23,8 +23,5 @@ describe CompetitionService do
 
     it { expect { described_class.add_result(id, attributes) }.to change { Result.count }.by 1 }
     it { expect(described_class.add_result(id, attributes)).to be_truthy }
-  end
-
-  context '#ranking' do
   end
 end

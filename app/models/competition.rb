@@ -19,4 +19,6 @@ class Competition < ActiveRecord::Base
   enum status: %i(in_progress finished)
 
   validates_presence_of :sport_name, :athletes
+
+  delegate :ranking_calculator_strategy, to: :sport
 end
